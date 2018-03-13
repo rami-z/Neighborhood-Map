@@ -7,7 +7,7 @@ var favoritePlacesModel = [{
     {
         title: 'Red Sea Mall',
         location: { lat: 21.6262366, lng: 39.1094803 },
-        id: "4b81e997f964a520c3c330e3",
+        id: "4b81e997f964a520c3c330e3"
     },
     {
         title: 'Al-Shallal Theme Park',
@@ -61,7 +61,7 @@ function initMap() {
             marker.setIcon(highlightedIcon);
             setTimeout((function() {
                 marker.setIcon(defaultIcon);
-            }).bind(marker), 1400)
+            }).bind(marker), 1400);
         });
     };
     for (var i = 0; i < favoritePlacesModel.length; i++) {
@@ -113,10 +113,8 @@ function initMap() {
             setTimeout((function() {
                 this.setIcon(defaultIcon);
             }).bind(this), 1400);
-
-        }
+        };
     }
-
     ko.applyBindings(new ViewModel());
 }
 
@@ -142,8 +140,7 @@ function populateInfoWindow(marker, infowindow) {
             if (this.readyState == 4 && this.status == 200) {
 
                 var obj = JSON.parse(this.responseText); // store the response from foursquare
-                var rating = obj.response.venue.rating ? obj.response.venue.rating : "rating unavailable";
-                infowindow.c
+                infowindow.c;
                 infowindow.marker = marker;
                 infowindow.setContent('<div id="iw-container">' +
                     '<div class="iw-title">' + obj.response.venue.name + '</div>' +
@@ -163,7 +160,7 @@ function populateInfoWindow(marker, infowindow) {
                 alert("Unexpected end of JSON");
             }
             infowindow.open(map, marker);
-        }
+        };
     }
 }
 
